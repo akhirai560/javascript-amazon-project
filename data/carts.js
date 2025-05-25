@@ -36,3 +36,18 @@ export function addToCart(productId) {
   
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   }
+
+
+export function removeFromCart(id) {
+  cart.forEach((item, index) => {
+    if(item.productId === id) {
+      if(item.quantity > 1) {
+        item.quantity--;
+      } else {
+        cart.splice(index,1)
+      }
+    }
+    
+  })
+  
+}
