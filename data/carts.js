@@ -1,6 +1,10 @@
 
 export const LOCAL_STORAGE_CART_KEY = 'cart';
-export const cart = getFromStorage();
+export let cart = getFromStorage();
+
+export function resetCart() {
+  cart = [];
+}
 
 export function addToCart(productId) {
     let matchingItem;
